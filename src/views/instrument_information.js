@@ -12,14 +12,15 @@ InstrumentInformation.prototype.bindEvents = function () {
   });
 };
 
-InstrumentInformation.prototype.render = function (intrument) {
+InstrumentInformation.prototype.render = function(intrument) {
   const instrumentHeading = document.createElement('h1');
   const instrumentInformation = document.createElement('p');
-  instrumentHeading.textContent = instrument.name;
-  instrumentInformation.textContent = instrument.description;
-  container.appendChild(instrumentHeading);
-  container.appendChild(instrumentInformation);
-  container.innerHtml = "";
+  instrumentHeading.textContent = intrument.name;
+  instrumentInformation.textContent = intrument.description;
+  this.container.appendChild(instrumentHeading);
+  this.container.appendChild(instrumentInformation);
+  console.log(intrument);
+  this.container.innerHtml = "";
 };
 
 module.exports = InstrumentInformation;
