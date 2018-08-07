@@ -8,5 +8,9 @@ InstrumentSelect.prototype.bindEvents = function () {
     console.log(allInstruments);
     this.populate(allInstruments);
   });
+  this.element.addEventListener("change", (evt) => {
+    const selectedInstrument = evt.target.value;
+    PubSub.publish('Instruments:selected-instrument', selectedInstrument);
 
+  });
 };
