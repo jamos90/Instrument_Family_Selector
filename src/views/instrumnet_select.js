@@ -14,3 +14,14 @@ InstrumentSelect.prototype.bindEvents = function () {
 
   });
 };
+
+InstrumentSelect.prototype.populate = function (insturmentData) {
+  insturmentData.forEach((instrument, index) => }{
+     const item = document.createElement('option');
+     option.textContent = instrument.name;
+     option.value = index;
+     this.element.appendChild(item);
+  });
+};
+
+module.exports = InstrumentSelect;
