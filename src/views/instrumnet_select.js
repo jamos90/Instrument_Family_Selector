@@ -1,9 +1,11 @@
-const InstrumentSelect = function () {
+const PubSub = require('../helpers/pub_sub.js');
+
+const InstrumentSelect = function (element) {
   this.element = element;
 }
 
 InstrumentSelect.prototype.bindEvents = function () {
-  PubSub.subscribe('Instruments:all-intruments-loaded' (evt) =>{
+  PubSub.subscribe('Instruments:all-intruments-loaded', (evt) =>{
     const allInstruments = evt.detail;
     console.log(allInstruments);
     this.populate(allInstruments);
@@ -16,10 +18,10 @@ InstrumentSelect.prototype.bindEvents = function () {
 };
 
 InstrumentSelect.prototype.populate = function (insturmentData) {
-  insturmentData.forEach((instrument, index) => }{
+  insturmentData.forEach((instrument, index) => {
      const item = document.createElement('option');
-     option.textContent = instrument.name;
-     option.value = index;
+     item.textContent = instrument.name;
+     item.value = index;
      this.element.appendChild(item);
   });
 };
