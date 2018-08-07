@@ -17,10 +17,12 @@ InstrumentInformation.prototype.render = function(intrument) {
   const instrumentInformation = document.createElement('p');
   instrumentHeading.textContent = intrument.name;
   instrumentInformation.textContent = intrument.description;
+  this.container.innerHTML = " ";
   this.container.appendChild(instrumentHeading);
   this.container.appendChild(instrumentInformation);
   console.log(intrument);
-  this.container.innerHtml = "";
+
+
 };
 
 module.exports = InstrumentInformation;
