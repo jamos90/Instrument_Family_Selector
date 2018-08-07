@@ -4,8 +4,8 @@ const InsturmentInformation = function(container){
   this.container = container;
 }
 
-InstrumentInformation.prototype.bindEvents = function () {
-  PubSub.subscribe('Instrument:instrument-information', (evt) {
+InsturmentInformation.prototype.bindEvents = function () {
+  PubSub.subscribe('Instrument:instrument-information', (evt) => {
     const selectedInstrument = evt.detail;
     console.log(selectedInstrument);
     this.render(selectedInstrument);
@@ -13,4 +13,4 @@ InstrumentInformation.prototype.bindEvents = function () {
 
 };
 
-module.exports = InstrumentInformation;
+module.exports = InsturmentInformation;
