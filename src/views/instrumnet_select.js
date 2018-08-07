@@ -22,6 +22,7 @@ InstrumentSelect.prototype.populate = function (insturmentData) {
      const item = document.createElement('option');
      item.textContent = instrument.name;
      item.value = index;
+     console.log(item.value);
      this.element.appendChild(item);
   });
 };
